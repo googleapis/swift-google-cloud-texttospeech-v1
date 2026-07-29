@@ -59,14 +59,14 @@ extension Clients {
 
     public func listVoices(
       request: ListVoicesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudTexttospeechV1.ListVoicesResponse {
+    ) async throws -> GoogleCloudTextToSpeechV1.ListVoicesResponse {
       try await self._intercept(
         request: request,
         options: options,
         name: "listVoices",
         action: {
           (r: ListVoicesRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudTexttospeechV1.ListVoicesResponse
+            -> GoogleCloudTextToSpeechV1.ListVoicesResponse
           in
           return try await self.inner.listVoices(request: r, options: o)
         })
@@ -74,14 +74,14 @@ extension Clients {
 
     public func synthesizeSpeech(
       request: SynthesizeSpeechRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse {
+    ) async throws -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse {
       try await self._intercept(
         request: request,
         options: options,
         name: "synthesizeSpeech",
         action: {
           (r: SynthesizeSpeechRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse
+            -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse
           in
           return try await self.inner.synthesizeSpeech(request: r, options: o)
         })

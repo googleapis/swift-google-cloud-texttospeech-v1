@@ -26,11 +26,11 @@ extension Clients {
   protocol TextToSpeechStub {
     func listVoices(
       request: ListVoicesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudTexttospeechV1.ListVoicesResponse
+    ) async throws -> GoogleCloudTextToSpeechV1.ListVoicesResponse
 
     func synthesizeSpeech(
       request: SynthesizeSpeechRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse
+    ) async throws -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse
 
     func listOperations(
       request: GoogleLongrunning.ListOperationsRequest, options: GoogleCloudGax.RequestOptions
@@ -51,7 +51,7 @@ extension Clients {
 
     public func listVoices(
       request: ListVoicesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudTexttospeechV1.ListVoicesResponse {
+    ) async throws -> GoogleCloudTextToSpeechV1.ListVoicesResponse {
       let path = try { () throws -> Swift.String in
         return "/v1/voices"
       }()
@@ -65,12 +65,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudTexttospeechV1.ListVoicesResponse.self, from: data)
+        GoogleCloudTextToSpeechV1.ListVoicesResponse.self, from: data)
     }
 
     public func synthesizeSpeech(
       request: SynthesizeSpeechRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse {
+    ) async throws -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse {
       let path = try { () throws -> Swift.String in
         return "/v1/text:synthesize"
       }()
@@ -84,7 +84,7 @@ extension Clients {
       req.httpBody = try JSONEncoder().encode(request)
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudTexttospeechV1.SynthesizeSpeechResponse.self, from: data)
+        GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse.self, from: data)
     }
 
     public func listOperations(

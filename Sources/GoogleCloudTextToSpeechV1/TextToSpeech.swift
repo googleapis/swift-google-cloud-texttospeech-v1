@@ -43,7 +43,7 @@ public class TextToSpeechClient: Clients.TextToSpeechProtocol {
   /// @Snippet(path: "TextToSpeech_ListVoices")
   public func listVoices(
     request: ListVoicesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudTexttospeechV1.ListVoicesResponse {
+  ) async throws -> GoogleCloudTextToSpeechV1.ListVoicesResponse {
     try await self.inner.listVoices(request: request, options: options)
   }
 
@@ -53,7 +53,7 @@ public class TextToSpeechClient: Clients.TextToSpeechProtocol {
   /// @Snippet(path: "TextToSpeech_SynthesizeSpeech")
   public func synthesizeSpeech(
     request: SynthesizeSpeechRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse {
+  ) async throws -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse {
     try await self.inner.synthesizeSpeech(request: request, options: options)
   }
 
@@ -106,23 +106,23 @@ extension Clients {
   public protocol TextToSpeechProtocol {
     /// See `TextToSpeechClient.listVoices`.
     func listVoices(request: ListVoicesRequest) async throws
-      -> GoogleCloudTexttospeechV1.ListVoicesResponse
+      -> GoogleCloudTextToSpeechV1.ListVoicesResponse
 
     /// See `TextToSpeechClient.listVoices`.
     func listVoices(
       languageCode: Swift.String,
-    ) async throws -> GoogleCloudTexttospeechV1.ListVoicesResponse
+    ) async throws -> GoogleCloudTextToSpeechV1.ListVoicesResponse
 
     /// See `TextToSpeechClient.synthesizeSpeech`.
     func synthesizeSpeech(request: SynthesizeSpeechRequest) async throws
-      -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse
+      -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse
 
     /// See `TextToSpeechClient.synthesizeSpeech`.
     func synthesizeSpeech(
       input: SynthesisInput?,
       voice: VoiceSelectionParams?,
       audioConfig: AudioConfig?,
-    ) async throws -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse
+    ) async throws -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse
 
     /// See `TextToSpeechClient.listOperations`.
     func listOperations(request: GoogleLongrunning.ListOperationsRequest) async throws
@@ -142,12 +142,12 @@ extension Clients {
     /// See `TextToSpeechClient.listVoices`.
     func listVoices(
       request: ListVoicesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudTexttospeechV1.ListVoicesResponse
+    ) async throws -> GoogleCloudTextToSpeechV1.ListVoicesResponse
 
     /// See `TextToSpeechClient.synthesizeSpeech`.
     func synthesizeSpeech(
       request: SynthesizeSpeechRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse
+    ) async throws -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse
 
     /// See `TextToSpeechClient.listOperations`.
     func listOperations(
@@ -164,20 +164,20 @@ extension Clients {
 // Default implementations
 extension Clients.TextToSpeechProtocol {
   public func listVoices(request: ListVoicesRequest) async throws
-    -> GoogleCloudTexttospeechV1.ListVoicesResponse
+    -> GoogleCloudTextToSpeechV1.ListVoicesResponse
   {
     try await self.listVoices(request: request, options: .init())
   }
 
   public func listVoices(
     request: ListVoicesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudTexttospeechV1.ListVoicesResponse {
+  ) async throws -> GoogleCloudTextToSpeechV1.ListVoicesResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func listVoices(
     languageCode: Swift.String,
-  ) async throws -> GoogleCloudTexttospeechV1.ListVoicesResponse {
+  ) async throws -> GoogleCloudTextToSpeechV1.ListVoicesResponse {
     let request = ListVoicesRequest().with {
       $0.languageCode = languageCode
     }
@@ -185,14 +185,14 @@ extension Clients.TextToSpeechProtocol {
   }
 
   public func synthesizeSpeech(request: SynthesizeSpeechRequest) async throws
-    -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse
+    -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse
   {
     try await self.synthesizeSpeech(request: request, options: .init())
   }
 
   public func synthesizeSpeech(
     request: SynthesizeSpeechRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse {
+  ) async throws -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -200,7 +200,7 @@ extension Clients.TextToSpeechProtocol {
     input: SynthesisInput?,
     voice: VoiceSelectionParams?,
     audioConfig: AudioConfig?,
-  ) async throws -> GoogleCloudTexttospeechV1.SynthesizeSpeechResponse {
+  ) async throws -> GoogleCloudTextToSpeechV1.SynthesizeSpeechResponse {
     let request = SynthesizeSpeechRequest().with {
       $0.input = input
       $0.voice = voice
